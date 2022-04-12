@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Alpaca Picker</title>
+	<meta name="author" content="Mike Irving, Dot Net North 2020 - 2022">
+	<link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+	<!--
+		Sound Credits:
+		"amazing game award sound effect" - http://freesoundeffect.net/sound/amazing-game-award-sound-effect
+		"bonus award sound effect" - http://freesoundeffect.net/sites/default/files/bonus-award-sound-effect-52630616.mp3
+	-->
+</head>
+<body>
+	<section id="sectionInput">
+		<h1>The Amazing '<span>Alpaca Picker</span>'.</h1>
+		<div>
+			<textarea id="txtInput" placeholder="Paste names here..."></textarea>
+			<button type="button" onclick="LoadInput();">Load</button>
+		</div>
+		<h2>Options...</h2>
+		<div>
+			<label class="title">Rotations:</label>
+			<input type="radio" name="radioRotation" id="radioRotation1" value="1">
+			<label for="radioRotation1">1</label>
+			<input type="radio" name="radioRotation" id="radioRotation2" value="2">
+			<label for="radioRotation2">2</label>
+			<input type="radio" name="radioRotation" id="radioRotation3" value="3" checked>
+			<label for="radioRotation3">3</label>
+			<input type="radio" name="radioRotation" id="radioRotation4" value="4">
+			<label for="radioRotation4">4</label>
+			<input type="radio" name="radioRotation" id="radioRotation5" value="5">
+			<label for="radioRotation5">5</label>
+			<input type="radio" name="radioRotation" id="radioRotation6" value="6">
+			<label for="radioRotation6">6</label>
+			<input type="radio" name="radioRotation" id="radioRotation7" value="7">
+			<label for="radioRotation7">7</label>
+		</div>
+		<div>
+			<label class="title">Change colour every:</label>
+			<input type="radio" name="radioColourChange" id="radioColourChange100" value="100" checked>
+			<label for="radioColourChange100">100ms</label>
+			<input type="radio" name="radioColourChange" id="radioColourChange200" value="200">
+			<label for="radioColourChange200">200ms</label>
+			<input type="radio" name="radioColourChange" id="radioColourChange500" value="500">
+			<label for="radioColourChange500">500ms</label>
+		</div>
+		<div class="footer">
+			<p>
+				Action Keys (only in picker view):<br>
+				1 = Spin the picker, 0 = Return to input screen,<br>
+				5 = Spin sound check, 6 = Announce sound check.
+			</p>
+			<p>v1.0.1 Written by Mike Irving. &copy; Dot Net North 2020 - 2022.</p>
+		</div>
+	</section>
+	
+	<section id="sectionPicker">
+		<div class="divImageHolder">
+			<img src="dnn-logo-picker-hollow-1200.png" onclick="PickWinner();">
+		</div>
+		<div id="divWinner">
+			<label id="lblWinnerTitle">the winner is</label>
+			<label id="lblWinner">ABC</label>
+		</div>
+	</section>
+	
+	<section id="sectionHidden">
+		<audio id="audioSpin">
+			<source src="/audio/amazing-game-award-sound-effect-82714844.mp3">
+		</audio>
+		<audio id="audioAnnounce">
+			<source src="/audio/bonus-award-sound-effect-52630616.mp3">
+		</audio>
+	</section>
+</body>
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/scripts.js"></script>
+</html>

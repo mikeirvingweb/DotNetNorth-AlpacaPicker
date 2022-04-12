@@ -1,0 +1,20 @@
+body { display:flex; align-items: center; font-family: 'Open Sans',sans-serif; background-color: #0D5651; height: 100vh; margin: 0; color: #999; }
+		
+#sectionInput {text-align: left; margin: 0 auto;}
+#sectionInput div {width:500px; clear: both; margin-top: 1em; }
+#sectionInput div.footer { margin-top: 3em; text-align:right; font-size: 0.8em; }
+#sectionInput h1, #sectionInput h2 {font-size: 1.0em; color: white; }
+#sectionInput h1 span {color: #FFFF00; text-decoration: underline; }
+#sectionInput label.title {font-weight: bold; }
+#sectionInput textarea {width:500px; height: 300px; border: none; }
+#sectionInput button {background-color: yellow; border: none; margin-top: 10px; padding: 10px; font-weight: bold; color: black; display:block; float: right; }
+
+#sectionPicker {display: none; width:100%; text-align: center; }
+#sectionPicker .divImageHolder {border: none; transition-duration: 7s; transition-timing-function: ease-in-out; width:600px; height:600px; background-color: transparent; display: inline-block; }
+#sectionPicker img {border: none; width:600px; height:600px; display:block; float:left; }
+#sectionPicker #divWinner {display: none; margin: 50px; }
+#sectionPicker #divWinner label {display: block; font-weight: 400; color: white; }
+#sectionPicker #divWinner #lblWinnerTitle {font-size: 2em; }
+#sectionPicker #divWinner #lblWinner {font-size: 6em; }
+
+#sectionHidden {display: none; }
