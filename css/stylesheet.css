@@ -8,6 +8,7 @@ body { display:flex; align-items: center; font-family: 'Open Sans',sans-serif; b
 #sectionInput label.title {font-weight: bold; }
 #sectionInput textarea {width:500px; height: 300px; border: none; }
 #sectionInput button {background-color: yellow; border: none; margin-top: 10px; padding: 10px; font-weight: bold; color: black; display:block; float: right; }
+#sectionInput a {color: #FFFF00;}
 
 #sectionPicker {display: none; width:100%; text-align: center; }
 #sectionPicker .divImageHolder {border: none; transition-duration: 7s; transition-timing-function: ease-in-out; width:600px; height:600px; background-color: transparent; display: inline-block; }
