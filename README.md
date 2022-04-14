@@ -1,5 +1,7 @@
 # Dot Net North 'Alpaca Picker'
-🦙 The Amazing 'Alpaca Picker'. As used for the Prize Draws at [Dot Net North](https://www.meetup.com/DotNetNorth) events.
+🦙 The Amazing '**Alpaca Picker**'. As used for the Prize Draws at [Dot Net North](https://www.meetup.com/DotNetNorth) events.  
+
+Public link: [Alpaca Picker](https://alpacapicker.dotnetnorth.org.uk/)
 
 ## How to use
 
