@@ -17,7 +17,6 @@
 		<h1>The Amazing '<span>Alpaca Picker</span>'.</h1>
 		<div>
 			<textarea id="txtInput" placeholder="Paste names here..."></textarea>
-			<button type="button" onclick="LoadInput();">Load</button>
 		</div>
 		<h2>Options...</h2>
 		<div>
@@ -46,13 +45,39 @@
 			<input type="radio" name="radioColourChange" id="radioColourChange500" value="500">
 			<label for="radioColourChange500">500ms</label>
 		</div>
+		<div>
+			<label class="title">Add number range:</label>
+			<label for="rangeFrom">from</label>
+			<input type="number" id="rangeFrom" value="0" min="0" step="1" />
+			<label for="rangeTo">to</label>
+			<input type="number" id="rangeTo" value="10" min="0" step="1" />
+			<button onclick="AddNumberRange();">&gt;</button>
+		</div>
+		<div class="buttons">
+			<div class="left">
+				<label class="title">..:: HTML5 Local Storage ::..</label>
+				<div>
+					<button type="button" onclick="LoadFromLocalStorage();">Load</button>
+					<button type="button" onclick="SaveToLocalStorage();">Save</button>
+					<button type="button" onclick="DeleteFromLocalStorage();" class="delete">Delete</button>
+				</div>
+			</div>
+			<div class="right">
+				<label class="title">..:: Picker ::..</label>
+				<div>
+					<button type="button" onclick="ClearInput();">Empty</button>
+					<button type="button" onclick="LoadInput();" class="start">Start</button>
+				</div>
+			</div>
+		</div>
 		<div class="footer">
 			<p>
-				Action Keys (only in picker view):<br>
-				1 = Spin the picker, 0 = Return to input screen,<br>
-				5 = Spin sound check, 6 = Announce sound check.
+				<strong>Action Keys (only in picker view):</strong><br>
+				Main: 1 = Spin the picker, 0 = Return to input screen,<br>
+				Sound Check: 5 = Spin sound, 6 = Announce sound,<br>
+				Misc: U = Show / Hide URL.
 			</p>
-			<p>v1.0.1 Written by Mike Irving. &copy; Dot Net North 2020 - 2022.</p>
+			<p>v1.1 Written by Mike Irving. &copy; Dot Net North 2020 - 2022.</p>
 			<p>Source Code available on <a href="https://github.com/mikeirvingweb/DotNetNorth-AlpacaPicker">GitHub</a>.</p>
 		</div>
 	</section>
@@ -65,6 +90,7 @@
 			<label id="lblWinnerTitle">the winner is</label>
 			<label id="lblWinner">ABC</label>
 		</div>
+		<div id="divUrl"></div>
 	</section>
 	
 	<section id="sectionHidden">
