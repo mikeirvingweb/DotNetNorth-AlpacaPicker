@@ -1,13 +1,15 @@
 $("body").keypress(function(event) {
-	if(pickerInView) {
-		if(event.which == 49) // '1'
+	if (pickerInView) {
+		if (event.which == 49) // '1'
 			PickWinner();
-		else if(event.which == 53) // '5'
+		else if (event.which == 53) // '5'
 			$("#audioSpin")[0].play();
-		else if(event.which == 54) // '6'
+		else if (event.which == 54) // '6'
 			$("#audioAnnounce")[0].play();
-		else if(event.which == 48 && !(animating)) // '0'
+		else if (event.which == 48 && !(animating)) // '0'
 			ReturnToInput();
+		else if ((event.which == 85 || event.which == 117) && !(animating)) // '0'
+			ToggleURL();
 	}
 });
 
@@ -15,11 +17,40 @@ var arrayNames = [], animating = false, winnerShown = false, pickerInView = fals
 	arrayColours = ["#EE82EE", "#0000FF", "#008000", "#FFFF00", "#FFA500", "FF0000"],
 	rotationDegrees = null, colourChangeInterval = null;
 
+function AddNumberRange() {
+	var rangeFrom = parseInt($("#rangeFrom").val()), rangeTo = parseInt($("#rangeTo").val());
+
+	if (!isNaN(rangeFrom) && !isNaN(rangeTo) && rangeTo > rangeFrom) {
+		if ($("#txtInput").val() != "")
+			$("#txtInput").val($("#txtInput").val() + "\n");
+
+		for (let i = rangeFrom; i <= rangeTo; i++) {
+			$("#txtInput").val($("#txtInput").val() + i.toString() + "\n");
+        }
+    }
+}
+
+function LoadFromLocalStorage() {
+	$("#txtInput").val(localStorage.getItem("pickerText"));
+}
+
+function SaveToLocalStorage() {
+	localStorage.setItem("pickerText", $("#txtInput").val());
+}
+
+function DeleteFromLocalStorage() {
+	localStorage.removeItem("pickerText");
+}
+
+function ClearInput() {
+	$("#txtInput").val("");
+}
+
 function LoadInput() {
 	CleanseInput();
 	NamesToArray();
 	
-	if(arrayNames.length > 0) {
+	if (arrayNames.length > 0) {
 		var rotationDegrees = parseInt($("input[name=radioRotation]:checked").val()) * 360;
 		var colourChangeInterval = parseInt($("input[name=radioColourChange]:checked").val());
 		
@@ -63,10 +94,10 @@ function SetOptions() {
 }
 
 function PickWinner() {
-	if(animating)
+	if (animating)
 		return;
 
-	if(winnerShown) {
+	if (winnerShown) {
 		$("#divWinner").slideUp();
 		winnerShown = false;
 		return;
@@ -74,7 +105,7 @@ function PickWinner() {
 	
 	$("#sectionPicker .divImageHolder").css("transition-duration", "7s");
 	
-	if(arrayNames.length < 1) {
+	if (arrayNames.length < 1) {
 		ReturnToInput();
 	} else {
 		$("#audioSpin")[0].play();
@@ -114,7 +145,7 @@ function PickWinner() {
 function SetRandomColour() {
 	$("#sectionPicker img").css("background-color", arrayColours[Math.floor(Math.random() * arrayColours.length)]);
 	
-	if(animating)
+	if (animating)
 		setTimeout(function(){ SetRandomColour() }, colourChangeInterval);
 	else
 		$("#sectionPicker img").css("background-color", "transparent");
@@ -126,4 +157,11 @@ function ReturnToInput() {
 
 	$("#sectionPicker").hide(); $("#sectionInput").show();
 	pickerInView = false;
+}
+
+function ToggleURL() {
+	if ($("#divUrl").text() == "")
+		$("#divUrl").text(window.location.hostname);
+
+	$("#divUrl").toggle();
 }

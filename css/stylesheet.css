@@ -1,21 +1,36 @@
-body { display:flex; align-items: center; font-family: 'Open Sans',sans-serif; background-color: #0D5651; height: 100vh; margin: 0; color: #999; }
+body { display: flex; align-items: center; font-family: 'Open Sans',sans-serif; background-color: #0D5651; height: 100vh; margin: 0; color: #999; }
 		
-#sectionInput {text-align: left; margin: 0 auto;}
-#sectionInput div {width:500px; clear: both; margin-top: 1em; }
-#sectionInput div.footer { margin-top: 3em; text-align:right; font-size: 0.8em; }
+#sectionInput { text-align: left; margin: 0 auto;}
+#sectionInput > div { width: 500px; clear: both; margin-top: 1em; }
+#sectionInput div.footer { margin-top: 3em; text-align: right; font-size: 0.8em; }
 #sectionInput h1, #sectionInput h2 {font-size: 1.0em; color: white; }
 #sectionInput h1 span {color: #FFFF00; text-decoration: underline; }
-#sectionInput label.title {font-weight: bold; }
-#sectionInput textarea {width:500px; height: 300px; border: none; }
-#sectionInput button {background-color: yellow; border: none; margin-top: 10px; padding: 10px; font-weight: bold; color: black; display:block; float: right; }
-#sectionInput a {color: #FFFF00;}
+#sectionInput label.title { font-weight: bold; }
+#sectionInput textarea { width:500px; height: 300px; border: none; }
 
-#sectionPicker {display: none; width:100%; text-align: center; }
-#sectionPicker .divImageHolder {border: none; transition-duration: 7s; transition-timing-function: ease-in-out; width:600px; height:600px; background-color: transparent; display: inline-block; }
-#sectionPicker img {border: none; width:600px; height:600px; display:block; float:left; }
-#sectionPicker #divWinner {display: none; margin: 50px; }
-#sectionPicker #divWinner label {display: block; font-weight: 400; color: white; }
-#sectionPicker #divWinner #lblWinnerTitle {font-size: 2em; }
-#sectionPicker #divWinner #lblWinner {font-size: 6em; }
+#sectionInput input[type=number] { width: 60px; }
+#sectionInput button { background-color: white; border: none; font-weight: bold; color: black; display: inine-block; color: #0D5651; }
 
-#sectionHidden {display: none; }
+#sectionInput .buttons { margin: 1em 0 0 0; text-align: center; }
+#sectionInput .buttons div.left { float: left; }
+#sectionInput .buttons div.right { float: right; width: auto; }
+#sectionInput .buttons div div { margin-top: 0.5em;  }
+#sectionInput .buttons div label { color: white; font-size: 0.8em; }
+#sectionInput .buttons button { padding: 10px; margin: 0 0 1em 0; }
+#sectionInput .buttons button.delete { background-color: pink; color: black; }
+#sectionInput .buttons button.delete::before { content: 'X'; color: white; background-color: red; margin: 0 0.5em 0 0; padding: 0.2em; width: 1em; height: 1em; border-radius: 50% 50%; display: inline-block; font-size: 0.8em; font-weight: normal; }
+#sectionInput .buttons button.start { background-color: yellow; color: black; }
+#sectionInput .buttons button.start::after { content: '>'; color: white; background-color: green; margin: 0 0 0 0.5em; padding: 0.2em; width: 1em; height: 1em; border-radius: 50% 50%; display: inline-block; font-size: 0.8em; font-weight: normal; }
+#sectionInput a { color: yellow;}
+
+#sectionPicker { display: none; width: 100%; text-align: center; }
+#sectionPicker .divImageHolder { border: none; transition-duration: 7s; transition-timing-function: ease-in-out; width: 600px; height: 600px; background-color: transparent; display: inline-block; }
+#sectionPicker img { border: none; width: 600px; height: 600px; display:block; float: left; }
+#sectionPicker #divWinner { display: none; margin: 50px; }
+#sectionPicker #divWinner label { display: block; font-weight: 400; color: white; }
+#sectionPicker #divWinner #lblWinnerTitle { font-size: 2em; }
+#sectionPicker #divWinner #lblWinner { font-size: 6em; }
+
+#sectionPicker #divUrl { display: none; color: white; font-size: 2.25em; }
+
+#sectionHidden { display: none; }
