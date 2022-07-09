@@ -5,15 +5,27 @@ Public link: [Alpaca Picker](https://alpacapicker.dotnetnorth.org.uk/)
 
 ## How to use
 
-📋 Simply paste in names for your prize draw, set your preferred _rotations_ and _colour change_ options, then click _[Load]_.
+📋 Simply paste in names for your prize draw, set your preferred _rotations_ and _colour change_ options, then click `Start`.
+
+🎟️ If you are using raffle tickets, use the _Add number range_ feature to add numbers between a chosen _from_ and _to_ sequence.
+
+Press `Empty` to clear the input area.
 
 _Empty lines will be removed automatically._  
   
 
-⌨_Action Keys_ (only in picker view):
+⌨ _Action Keys_ (only in picker view):
 
-1 = Spin the picker, 0 = Return to input screen,  
-5 = Spin sound check, 6 = Announce sound check.
+`1` = Spin the picker, `0` = Return to input screen,  
+`5` = Spin sound check, `6` = Announce sound check.
+
+`U` = Show URL (case insensitive).
+
+💾 _HTML5 Local Storage_
+
+Use the `Save` button to store your names / numbers in _HTML5 Local Storage_.  
+
+Press `Load` to Retrieve them again, or `Delete` to remove them permanently.
 
 ### Contributions
 
